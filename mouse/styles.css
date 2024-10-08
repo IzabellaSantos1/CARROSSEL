@@ -1,0 +1,128 @@
+body {
+    background-color: #fff;
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #777;
+    height: 100vh;
+    display: flex;
+}
+
+.carrossel {
+    position: relative;
+    top: 100px;
+    width: 800px; /* Largura do carrossel */
+    height: 400px; /* Altura do carrossel */
+    overflow: hidden;
+    cursor:default; /* Muda o cursor para 'grab' */
+    margin-left: 300px; /* Ajuste para novo tamanho do menu */
+}
+
+.imagens {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.imagem-container {
+    position: relative; /* Para permitir posicionamento absoluto do overlay */
+    min-width: 100%; /* Cada imagem ocupa 100% do carrossel */
+}
+
+.imagem {
+    width: 100%; /* A imagem ocupa a largura total do contêiner */
+    height: 100%; /* A imagem ocupa a altura total do contêiner */
+    object-fit: cover; /* Para manter a proporção da imagem */
+    border-radius: 25px; /* Bordas arredondadas */
+}
+
+.imagens img:nth-child(1) {
+    width: 100%;  /* Largura desejada */
+    height: 80%; /* Altura desejada */
+    object-fit: cover; /* Para manter a proporção da imagem */
+    border-radius: 25px; /* Bordas arredondadas */
+}
+
+.imagens img:nth-child(2) {
+    width: 400px;  /* Largura desejada */
+    height: 350px; /* Altura desejada */
+    object-fit: cover; /* Para manter a proporção da imagem */
+    border-radius: 25px; /* Bordas arredondadas */
+}
+
+.texto-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content:center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    background-color: rgba(0, 0, 0, 0.3); /* Fundo preto com 30% de opacidade */
+    height: 330px ;
+    color: rgb(255, 255, 255); /* Cor do texto */
+    text-align: center ; /* Centraliza o texto */
+    border-radius: 25px; /* Mesma borda arredondada da imagem */
+}
+
+.texto-overlay h1,
+.texto-overlay p {
+    margin: 0; /* Remove margens padrão */
+}
+
+
+.sidebar {
+    position: fixed; /* Fixa a sidebar na posição desejada */
+    left: 20px; /* Distância da esquerda */
+    top: 100px; /* Distância do topo */
+    width: 200px; /* Nova largura da sidebar */
+    padding: 20px; /* Adiciona espaçamento interno */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adiciona sombra para efeito de profundidade */
+    height: calc(100% - 100px); /* Altura total menos o espaço do topo */
+    overflow-y: auto; /* Permite rolagem se o conteúdo for muito longo */
+}
+
+.list-group {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.list-group-item {
+    padding: 10px 25px;
+    border-bottom: 2px solid #9e9292;
+    transition: background-color 0.3s;
+}
+
+.list-group-item a {
+    text-decoration: none;
+    color: #3a3737;
+    font-weight: bold;
+    display: block;
+}
+
+.list-group-item:hover {
+    background-color: #dad0d0; /* Muda a cor ao passar o mouse */
+    border-left: 4px solid #ff0000; /* Borda para o item ativo */
+}
+
+.list-group-item.active {
+    background-color: #f1bfbf; /* Cor para o item ativo */
+    border-left: 4px solid #ff0000; /* Borda para o item ativo */
+}
+
+.sub-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.sub-list li {
+    padding: 5px 0;
+}
+
+.sub-list a {
+    font-weight: normal;
+    color: #ff0000; /* Cor dos links da sub-lista */
+}
+
